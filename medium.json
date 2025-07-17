@@ -1,0 +1,592 @@
+{
+  "medium_questions": [
+    {
+      "question": "You need to ensure that your web application can handle traffic spikes. Which combination of AWS services would you use?",
+      "options": [
+        "EC2 with Manual Scaling",
+        "EC2 with Auto Scaling Groups and Application Load Balancer",
+        "Lambda with API Gateway",
+        "ECS with Manual Container Management"
+      ],
+      "correct_answer": "EC2 with Auto Scaling Groups and Application Load Balancer",
+      "explanation": "Auto Scaling Groups automatically adjust the number of EC2 instances based on demand, while Application Load Balancer distributes traffic across multiple instances, ensuring high availability and performance during traffic spikes.",
+      "topics": ["Auto Scaling", "Load Balancing", "High Availability"]
+    },
+    {
+      "question": "In a VPC, you want to allow instances in private subnets to access the internet for software updates but prevent inbound internet traffic. What should you use?",
+      "options": [
+        "Internet Gateway",
+        "NAT Gateway",
+        "VPC Endpoint",
+        "Direct Connect"
+      ],
+      "correct_answer": "NAT Gateway",
+      "explanation": "A NAT Gateway allows instances in private subnets to initiate outbound internet traffic for updates while preventing inbound internet traffic from reaching those instances.",
+      "topics": ["NAT Gateway", "VPC", "Security", "Networking"]
+    },
+    {
+      "question": "You have an application that processes large files uploaded to S3. The processing takes 10 minutes. Which AWS service is most appropriate?",
+      "options": [
+        "AWS Lambda",
+        "Amazon EC2",
+        "AWS Batch",
+        "Amazon ECS"
+      ],
+      "correct_answer": "AWS Batch",
+      "explanation": "AWS Batch is designed for batch computing workloads and can handle long-running jobs efficiently. Lambda has a 15-minute limit but is better for short-duration tasks, while Batch is optimized for longer processing jobs.",
+      "topics": ["Batch", "Compute Services", "File Processing"]
+    },
+    {
+      "question": "Which S3 storage class is most cost-effective for data that is accessed less than once per year?",
+      "options": [
+        "S3 Standard",
+        "S3 Standard-IA",
+        "S3 Glacier",
+        "S3 Glacier Deep Archive"
+      ],
+      "correct_answer": "S3 Glacier Deep Archive",
+      "explanation": "S3 Glacier Deep Archive is the most cost-effective storage class for data that is accessed less than once per year, offering the lowest storage costs with longer retrieval times.",
+      "topics": ["S3", "Storage Classes", "Cost Optimization"]
+    },
+    {
+      "question": "You need to implement a serverless architecture for a REST API that connects to a database. Which combination is most appropriate?",
+      "options": [
+        "EC2 + RDS + ELB",
+        "API Gateway + Lambda + DynamoDB",
+        "ECS + RDS + ALB",
+        "Elastic Beanstalk + RDS"
+      ],
+      "correct_answer": "API Gateway + Lambda + DynamoDB",
+      "explanation": "This combination provides a fully serverless architecture where API Gateway handles REST API requests, Lambda processes the business logic, and DynamoDB provides a serverless database solution.",
+      "topics": ["Serverless", "API Gateway", "Lambda", "DynamoDB"]
+    },
+    {
+      "question": "What is the difference between Application Load Balancer and Network Load Balancer?",
+      "options": [
+        "ALB operates at Layer 7, NLB operates at Layer 4",
+        "ALB operates at Layer 4, NLB operates at Layer 7",
+        "Both operate at Layer 7",
+        "Both operate at Layer 4"
+      ],
+      "correct_answer": "ALB operates at Layer 7, NLB operates at Layer 4",
+      "explanation": "Application Load Balancer operates at Layer 7 (application layer) and can route based on content, while Network Load Balancer operates at Layer 4 (transport layer) and provides ultra-high performance and low latency.",
+      "topics": ["Load Balancing", "Networking", "OSI Model"]
+    },
+    {
+      "question": "You need to ensure data consistency across multiple AWS regions. Which DynamoDB feature should you use?",
+      "options": [
+        "Local Secondary Index",
+        "Global Secondary Index",
+        "DynamoDB Streams",
+        "Global Tables"
+      ],
+      "correct_answer": "Global Tables",
+      "explanation": "DynamoDB Global Tables provide multi-region, multi-active database replication, ensuring data consistency across multiple AWS regions with automatic failover.",
+      "topics": ["DynamoDB", "Global Tables", "Multi-Region", "Consistency"]
+    },
+    {
+      "question": "Which CloudFormation property allows you to conditionally create resources?",
+      "options": [
+        "Parameters",
+        "Conditions",
+        "Mappings",
+        "Outputs"
+      ],
+      "correct_answer": "Conditions",
+      "explanation": "Conditions in CloudFormation allow you to conditionally create resources based on parameter values or other conditions defined in the template.",
+      "topics": ["CloudFormation", "Infrastructure as Code", "Conditions"]
+    },
+    {
+      "question": "You want to encrypt data at rest in an RDS database. Which approach should you use?",
+      "options": [
+        "Use AWS KMS encryption during database creation",
+        "Enable encryption after database creation",
+        "Use application-level encryption only",
+        "Encryption is not supported in RDS"
+      ],
+      "correct_answer": "Use AWS KMS encryption during database creation",
+      "explanation": "RDS encryption at rest must be enabled during database creation using AWS KMS. You cannot add encryption to an existing unencrypted database - you must create a new encrypted database.",
+      "topics": ["RDS", "Encryption", "KMS", "Security"]
+    },
+    {
+      "question": "Which IAM policy type is attached directly to users, groups, or roles?",
+      "options": [
+        "Resource-based policies",
+        "Identity-based policies",
+        "Service control policies",
+        "Permission boundaries"
+      ],
+      "correct_answer": "Identity-based policies",
+      "explanation": "Identity-based policies are attached directly to users, groups, or roles and define what actions those identities can perform on which resources.",
+      "topics": ["IAM", "Policies", "Security", "Access Control"]
+    },
+    {
+      "question": "You need to process streaming data in real-time. Which AWS service combination is most appropriate?",
+      "options": [
+        "S3 + Lambda",
+        "Kinesis Data Streams + Lambda",
+        "SQS + EC2",
+        "SNS + Lambda"
+      ],
+      "correct_answer": "Kinesis Data Streams + Lambda",
+      "explanation": "Kinesis Data Streams can ingest real-time streaming data, and Lambda can process this data in real-time as it arrives, making this combination ideal for stream processing.",
+      "topics": ["Kinesis", "Lambda", "Streaming", "Real-time Processing"]
+    },
+    {
+      "question": "What is the difference between SQS Standard and FIFO queues?",
+      "options": [
+        "Standard provides ordering, FIFO provides high throughput",
+        "Standard provides high throughput, FIFO provides ordering",
+        "Both provide the same features",
+        "FIFO is deprecated"
+      ],
+      "correct_answer": "Standard provides high throughput, FIFO provides ordering",
+      "explanation": "SQS Standard queues provide nearly unlimited throughput but don't guarantee message ordering, while FIFO queues guarantee message ordering and exactly-once processing but have lower throughput.",
+      "topics": ["SQS", "Messaging", "Queue Types"]
+    },
+    {
+      "question": "You need to implement blue-green deployment for your application. Which AWS service helps with this?",
+      "options": [
+        "AWS CodeDeploy",
+        "AWS CodeCommit",
+        "AWS CodeBuild",
+        "AWS CodePipeline"
+      ],
+      "correct_answer": "AWS CodeDeploy",
+      "explanation": "AWS CodeDeploy supports blue-green deployments, which help minimize downtime and reduce deployment risk by running two identical production environments.",
+      "topics": ["CodeDeploy", "Blue-Green Deployment", "DevOps"]
+    },
+    {
+      "question": "Which EBS volume type provides the highest IOPS performance?",
+      "options": [
+        "gp2",
+        "gp3",
+        "io1",
+        "io2"
+      ],
+      "correct_answer": "io2",
+      "explanation": "io2 volumes provide the highest IOPS performance with up to 64,000 IOPS per volume and are designed for I/O-intensive workloads that require high performance.",
+      "topics": ["EBS", "Storage", "IOPS", "Performance"]
+    },
+    {
+      "question": "You want to analyze logs from multiple AWS services. Which service should you use?",
+      "options": [
+        "CloudWatch Logs",
+        "AWS X-Ray",
+        "AWS Config",
+        "CloudTrail"
+      ],
+      "correct_answer": "CloudWatch Logs",
+      "explanation": "CloudWatch Logs can collect, monitor, and analyze log data from multiple AWS services and applications, providing a centralized logging solution.",
+      "topics": ["CloudWatch", "Logging", "Monitoring"]
+    },
+    {
+      "question": "Which RDS feature allows you to create read replicas across different regions?",
+      "options": [
+        "Multi-AZ deployment",
+        "Cross-region read replicas",
+        "Automated backups",
+        "Point-in-time recovery"
+      ],
+      "correct_answer": "Cross-region read replicas",
+      "explanation": "Cross-region read replicas allow you to create read-only copies of your database in different regions, improving read performance and providing disaster recovery capabilities.",
+      "topics": ["RDS", "Read Replicas", "Multi-Region", "Disaster Recovery"]
+    },
+    {
+      "question": "You need to ensure your Lambda function can securely access RDS. What should you configure?",
+      "options": [
+        "Security groups only",
+        "VPC configuration and security groups",
+        "IAM roles only",
+        "Public subnet deployment"
+      ],
+      "correct_answer": "VPC configuration and security groups",
+      "explanation": "Lambda functions need VPC configuration to access RDS instances in private subnets, and security groups must be configured to allow communication between Lambda and RDS.",
+      "topics": ["Lambda", "RDS", "VPC", "Security"]
+    },
+    {
+      "question": "Which CloudWatch metric is NOT available by default for EC2 instances?",
+      "options": [
+        "CPU Utilization",
+        "Network In/Out",
+        "Memory Utilization",
+        "Disk Read/Write"
+      ],
+      "correct_answer": "Memory Utilization",
+      "explanation": "Memory utilization is not available by default in CloudWatch for EC2 instances. You need to install the CloudWatch agent or use custom metrics to monitor memory usage.",
+      "topics": ["CloudWatch", "EC2", "Monitoring", "Metrics"]
+    },
+    {
+      "question": "You want to cache frequently accessed data from your database. Which AWS service is most appropriate?",
+      "options": [
+        "CloudFront",
+        "ElastiCache",
+        "S3",
+        "DynamoDB Accelerator"
+      ],
+      "correct_answer": "ElastiCache",
+      "explanation": "ElastiCache provides in-memory caching for frequently accessed database data, improving application performance by reducing database load.",
+      "topics": ["ElastiCache", "Caching", "Database Performance"]
+    },
+    {
+      "question": "Which AWS service helps you analyze and optimize your AWS costs?",
+      "options": [
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Trusted Advisor",
+        "All of the above"
+      ],
+      "correct_answer": "All of the above",
+      "explanation": "AWS Cost Explorer analyzes spending patterns, AWS Budgets helps set spending limits, and AWS Trusted Advisor provides cost optimization recommendations - all help with cost management.",
+      "topics": ["Cost Management", "Cost Explorer", "Budgets", "Trusted Advisor"]
+    },
+    {
+      "question": "You need to implement disaster recovery with RTO of 1 hour and RPO of 15 minutes. Which strategy is most appropriate?",
+      "options": [
+        "Backup and restore",
+        "Pilot light",
+        "Warm standby",
+        "Multi-site active-active"
+      ],
+      "correct_answer": "Warm standby",
+      "explanation": "Warm standby provides an RTO of around 1 hour and can achieve RPO of 15 minutes through regular data replication, making it suitable for these requirements.",
+      "topics": ["Disaster Recovery", "RTO", "RPO", "Business Continuity"]
+    },
+    {
+      "question": "Which feature allows you to run containers without managing servers?",
+      "options": [
+        "Amazon ECS with EC2 launch type",
+        "Amazon ECS with Fargate launch type",
+        "Amazon EKS with managed node groups",
+        "Amazon EC2 with Docker"
+      ],
+      "correct_answer": "Amazon ECS with Fargate launch type",
+      "explanation": "AWS Fargate is a serverless compute engine that allows you to run containers without managing servers, handling the underlying infrastructure automatically.",
+      "topics": ["ECS", "Fargate", "Serverless", "Containers"]
+    },
+    {
+      "question": "You want to monitor API calls made to your AWS account. Which service should you use?",
+      "options": [
+        "CloudWatch",
+        "CloudTrail",
+        "Config",
+        "Inspector"
+      ],
+      "correct_answer": "CloudTrail",
+      "explanation": "AWS CloudTrail logs all API calls made to your AWS account, providing a complete audit trail for security and compliance purposes.",
+      "topics": ["CloudTrail", "API Monitoring", "Auditing", "Security"]
+    },
+    {
+      "question": "Which DynamoDB feature allows you to automatically delete expired items?",
+      "options": [
+        "Time To Live (TTL)",
+        "Auto Scaling",
+        "Global Tables",
+        "DynamoDB Streams"
+      ],
+      "correct_answer": "Time To Live (TTL)",
+      "explanation": "DynamoDB TTL automatically deletes expired items from tables, helping to reduce storage costs and manage data lifecycle.",
+      "topics": ["DynamoDB", "TTL", "Data Lifecycle", "Cost Optimization"]
+    },
+    {
+      "question": "You need to ensure your application can handle database failures. Which RDS feature should you use?",
+      "options": [
+        "Read replicas",
+        "Multi-AZ deployment",
+        "Automated backups",
+        "Parameter groups"
+      ],
+      "correct_answer": "Multi-AZ deployment",
+      "explanation": "Multi-AZ deployment provides high availability by automatically failing over to a standby database in another AZ if the primary database fails.",
+      "topics": ["RDS", "Multi-AZ", "High Availability", "Failover"]
+    },
+    {
+      "question": "Which AWS service allows you to run code in response to changes in S3 objects?",
+      "options": [
+        "EC2",
+        "Lambda",
+        "ECS",
+        "Batch"
+      ],
+      "correct_answer": "Lambda",
+      "explanation": "AWS Lambda can be triggered by S3 events such as object creation, deletion, or modification, allowing you to run code in response to these changes.",
+      "topics": ["Lambda", "S3", "Event-driven", "Triggers"]
+    },
+    {
+      "question": "You want to implement a microservices architecture. Which AWS services combination is most appropriate?",
+      "options": [
+        "EC2 + RDS + ELB",
+        "ECS + API Gateway + Lambda",
+        "Elastic Beanstalk + RDS",
+        "EMR + S3"
+      ],
+      "correct_answer": "ECS + API Gateway + Lambda",
+      "explanation": "This combination supports microservices architecture with ECS for containerized services, API Gateway for service communication, and Lambda for serverless functions.",
+      "topics": ["Microservices", "ECS", "API Gateway", "Lambda"]
+    },
+    {
+      "question": "Which S3 feature automatically moves objects between storage classes based on access patterns?",
+      "options": [
+        "S3 Transfer Acceleration",
+        "S3 Lifecycle policies",
+        "S3 Cross-Region Replication",
+        "S3 Intelligent-Tiering"
+      ],
+      "correct_answer": "S3 Intelligent-Tiering",
+      "explanation": "S3 Intelligent-Tiering automatically moves objects between frequent and infrequent access tiers based on changing access patterns, optimizing storage costs.",
+      "topics": ["S3", "Intelligent-Tiering", "Cost Optimization", "Automation"]
+    },
+    {
+      "question": "You need to ensure your web application is highly available across multiple regions. Which architecture should you implement?",
+      "options": [
+        "Single region with Multi-AZ",
+        "Multi-region with Route 53 failover",
+        "Single AZ with multiple instances",
+        "Multi-region with manual failover"
+      ],
+      "correct_answer": "Multi-region with Route 53 failover",
+      "explanation": "Multi-region deployment with Route 53 health checks and DNS failover provides the highest availability by automatically routing traffic to healthy regions.",
+      "topics": ["Multi-Region", "Route 53", "High Availability", "Failover"]
+    },
+    {
+      "question": "Which AWS service helps you implement Infrastructure as Code with a declarative approach?",
+      "options": [
+        "AWS CLI",
+        "AWS CDK",
+        "CloudFormation",
+        "Terraform"
+      ],
+      "correct_answer": "CloudFormation",
+      "explanation": "CloudFormation uses a declarative approach where you define the desired state of your infrastructure in templates, and AWS handles the provisioning and management.",
+      "topics": ["CloudFormation", "Infrastructure as Code", "Declarative"]
+    },
+    {
+      "question": "You want to analyze your application's performance and identify bottlenecks. Which AWS service should you use?",
+      "options": [
+        "CloudWatch",
+        "X-Ray",
+        "CloudTrail",
+        "Config"
+      ],
+      "correct_answer": "X-Ray",
+      "explanation": "AWS X-Ray provides distributed tracing capabilities to analyze application performance, identify bottlenecks, and understand how your application and its underlying services are performing.",
+      "topics": ["X-Ray", "Performance Analysis", "Distributed Tracing"]
+    },
+    {
+      "question": "Which EC2 instance purchasing option provides the lowest cost for steady-state workloads?",
+      "options": [
+        "On-Demand",
+        "Reserved Instances",
+        "Spot Instances",
+        "Dedicated Hosts"
+      ],
+      "correct_answer": "Reserved Instances",
+      "explanation": "Reserved Instances provide significant cost savings (up to 75%) for steady-state workloads with predictable usage patterns over 1 or 3 year terms.",
+      "topics": ["EC2", "Reserved Instances", "Cost Optimization", "Pricing"]
+    },
+    {
+      "question": "You need to ensure your Lambda function can access resources in your VPC. What must you configure?",
+      "options": [
+        "Internet Gateway",
+        "VPC configuration in Lambda",
+        "Public subnet",
+        "Direct Connect"
+      ],
+      "correct_answer": "VPC configuration in Lambda",
+      "explanation": "Lambda functions need VPC configuration (subnet and security groups) to access resources within your VPC, such as RDS databases or EC2 instances.",
+      "topics": ["Lambda", "VPC", "Networking", "Configuration"]
+    },
+    {
+      "question": "Which CloudWatch feature allows you to create custom dashboards?",
+      "options": [
+        "CloudWatch Metrics",
+        "CloudWatch Alarms",
+        "CloudWatch Dashboards",
+        "CloudWatch Logs"
+      ],
+      "correct_answer": "CloudWatch Dashboards",
+      "explanation": "CloudWatch Dashboards allow you to create custom dashboards to visualize metrics and logs from multiple AWS services in a single view.",
+      "topics": ["CloudWatch", "Dashboards", "Monitoring", "Visualization"]
+    },
+    {
+      "question": "You want to implement a message queue that guarantees message ordering. Which SQS queue type should you use?",
+      "options": [
+        "Standard Queue",
+        "FIFO Queue",
+        "Dead Letter Queue",
+        "Delay Queue"
+      ],
+      "correct_answer": "FIFO Queue",
+      "explanation": "SQS FIFO queues guarantee message ordering and exactly-once processing, making them suitable for applications that require strict message ordering.",
+      "topics": ["SQS", "FIFO", "Message Ordering", "Messaging"]
+    },
+    {
+      "question": "Which AWS service provides a managed Elasticsearch service?",
+      "options": [
+        "CloudSearch",
+        "OpenSearch Service",
+        "Kendra",
+        "Comprehend"
+      ],
+      "correct_answer": "OpenSearch Service",
+      "explanation": "Amazon OpenSearch Service (formerly Elasticsearch Service) is a managed service that makes it easy to deploy, operate, and scale Elasticsearch clusters.",
+      "topics": ["OpenSearch", "Elasticsearch", "Search", "Managed Services"]
+    },
+    {
+      "question": "You need to implement user authentication for your mobile app. Which AWS service should you use?",
+      "options": [
+        "IAM",
+        "Cognito",
+        "Directory Service",
+        "Single Sign-On"
+      ],
+      "correct_answer": "Cognito",
+      "explanation": "Amazon Cognito provides user authentication and authorization for mobile and web applications, supporting user pools and identity pools.",
+      "topics": ["Cognito", "Authentication", "Mobile Apps", "User Management"]
+    },
+    {
+      "question": "Which AWS service allows you to run Apache Spark and Hadoop clusters?",
+      "options": [
+        "EMR",
+        "Glue",
+        "Kinesis",
+        "Athena"
+      ],
+      "correct_answer": "EMR",
+      "explanation": "Amazon EMR (Elastic MapReduce) is a managed service that makes it easy to run Apache Spark, Hadoop, and other big data frameworks on AWS.",
+      "topics": ["EMR", "Spark", "Hadoop", "Big Data"]
+    },
+    {
+      "question": "You want to automatically scale your DynamoDB table based on traffic. Which feature should you enable?",
+      "options": [
+        "Provisioned capacity",
+        "On-demand capacity",
+        "Auto Scaling",
+        "Global Tables"
+      ],
+      "correct_answer": "Auto Scaling",
+      "explanation": "DynamoDB Auto Scaling automatically adjusts read and write capacity based on traffic patterns, ensuring performance while optimizing costs.",
+      "topics": ["DynamoDB", "Auto Scaling", "Capacity Management", "Performance"]
+    },
+    {
+      "question": "Which AWS service provides a managed Apache Kafka service?",
+      "options": [
+        "Kinesis",
+        "MSK",
+        "SQS",
+        "SNS"
+      ],
+      "correct_answer": "MSK",
+      "explanation": "Amazon MSK (Managed Streaming for Apache Kafka) is a fully managed service that makes it easy to build and run applications that use Apache Kafka.",
+      "topics": ["MSK", "Kafka", "Streaming", "Managed Services"]
+    },
+    {
+      "question": "You need to implement a CI/CD pipeline. Which AWS service orchestrates the pipeline?",
+      "options": [
+        "CodeCommit",
+        "CodeBuild",
+        "CodeDeploy",
+        "CodePipeline"
+      ],
+      "correct_answer": "CodePipeline",
+      "explanation": "AWS CodePipeline is a continuous integration and continuous delivery service that orchestrates the build, test, and deployment phases of your release process.",
+      "topics": ["CodePipeline", "CI/CD", "DevOps", "Orchestration"]
+    },
+    {
+      "question": "Which AWS service allows you to run serverless containers?",
+      "options": [
+        "ECS with EC2",
+        "ECS with Fargate",
+        "EKS with managed nodes",
+        "Lambda"
+      ],
+      "correct_answer": "ECS with Fargate",
+      "explanation": "AWS Fargate allows you to run containers without managing servers, providing a serverless container experience with ECS or EKS.",
+      "topics": ["Fargate", "Serverless", "Containers", "ECS"]
+    },
+    {
+      "question": "You want to implement database sharding for better performance. Which AWS service supports this natively?",
+      "options": [
+        "RDS",
+        "DynamoDB",
+        "Aurora",
+        "Redshift"
+      ],
+      "correct_answer": "DynamoDB",
+      "explanation": "DynamoDB automatically handles data partitioning (sharding) across multiple servers based on the partition key, providing horizontal scaling without manual intervention.",
+      "topics": ["DynamoDB", "Sharding", "Partitioning", "Scaling"]
+    },
+    {
+      "question": "Which AWS service provides real-time data transformation and loading?",
+      "options": [
+        "Kinesis Data Streams",
+        "Kinesis Data Firehose",
+        "Kinesis Data Analytics",
+        "Glue"
+      ],
+      "correct_answer": "Kinesis Data Firehose",
+      "explanation": "Kinesis Data Firehose is a fully managed service that can transform and load streaming data into data lakes, data stores, and analytics services in real-time.",
+      "topics": ["Kinesis", "Data Firehose", "ETL", "Real-time Processing"]
+    },
+    {
+      "question": "You need to implement federated access to AWS resources. Which service should you use?",
+      "options": [
+        "IAM Users",
+        "IAM Roles",
+        "Cognito",
+        "Directory Service"
+      ],
+      "correct_answer": "IAM Roles",
+      "explanation": "IAM Roles with identity providers enable federated access, allowing users to assume roles in AWS using their existing corporate credentials.",
+      "topics": ["IAM", "Roles", "Federation", "Identity Providers"]
+    },
+    {
+      "question": "Which AWS service provides automated security assessment of applications?",
+      "options": [
+        "Inspector",
+        "GuardDuty",
+        "Security Hub",
+        "Macie"
+      ],
+      "correct_answer": "Inspector",
+      "explanation": "Amazon Inspector automatically assesses applications for vulnerabilities and provides detailed security findings with remediation guidance.",
+      "topics": ["Inspector", "Security Assessment", "Vulnerability Management"]
+    },
+    {
+      "question": "You want to implement event-driven architecture. Which AWS service combination is most appropriate?",
+      "options": [
+        "SQS + Lambda",
+        "SNS + Lambda",
+        "EventBridge + Lambda",
+        "All of the above"
+      ],
+      "correct_answer": "All of the above",
+      "explanation": "All combinations support event-driven architecture: SQS for queuing, SNS for pub/sub messaging, and EventBridge for event routing - all can trigger Lambda functions.",
+      "topics": ["Event-driven Architecture", "Lambda", "SQS", "SNS", "EventBridge"]
+    },
+    {
+      "question": "Which AWS service provides managed blockchain functionality?",
+      "options": [
+        "QLDB",
+        "Managed Blockchain",
+        "DocumentDB",
+        "Neptune"
+      ],
+      "correct_answer": "Managed Blockchain",
+      "explanation": "Amazon Managed Blockchain is a fully managed service that makes it easy to create and manage scalable blockchain networks using popular frameworks like Hyperledger Fabric and Ethereum.",
+      "topics": ["Managed Blockchain", "Blockchain", "Distributed Ledger"]
+    },
+    {
+      "question": "You need to implement a data lake architecture. Which AWS service is the foundation?",
+      "options": [
+        "RDS",
+        "S3",
+        "DynamoDB",
+        "Redshift"
+      ],
+      "correct_answer": "S3",
+      "explanation": "Amazon S3 serves as the foundation for data lakes, providing virtually unlimited storage capacity, durability, and the ability to store any type of data in its native format.",
+      "topics": ["S3", "Data Lake", "Storage", "Analytics"]
+    }
+  ]
+}
