@@ -1,0 +1,604 @@
+{
+  "easy_questions": [
+    {
+      "question": "What does AWS stand for?",
+      "options": [
+        "Amazon Web Services",
+        "Amazon World Services",
+        "Amazon Wireless Services",
+        "Amazon Web Solutions"
+      ],
+      "correct_answer": "Amazon Web Services",
+      "explanation": "AWS stands for Amazon Web Services, which is Amazon's cloud computing platform that offers a wide range of services including compute, storage, databases, networking, and more.",
+      "topics": ["AWS Basics", "Cloud Computing"]
+    },
+    {
+      "question": "Which AWS service provides virtual servers in the cloud?",
+      "options": [
+        "Amazon S3",
+        "Amazon EC2",
+        "Amazon RDS",
+        "Amazon VPC"
+      ],
+      "correct_answer": "Amazon EC2",
+      "explanation": "Amazon EC2 (Elastic Compute Cloud) provides scalable virtual servers in the cloud, allowing users to run applications on virtual machines.",
+      "topics": ["EC2", "Compute Services"]
+    },
+    {
+      "question": "What type of storage does Amazon S3 provide?",
+      "options": [
+        "Block storage",
+        "File storage",
+        "Object storage",
+        "Network storage"
+      ],
+      "correct_answer": "Object storage",
+      "explanation": "Amazon S3 provides object storage, which is ideal for storing and retrieving any amount of data from anywhere on the web.",
+      "topics": ["S3", "Storage Services"]
+    },
+    {
+      "question": "Which AWS service is used for domain name registration and DNS management?",
+      "options": [
+        "Amazon CloudFront",
+        "Amazon Route 53",
+        "Amazon VPC",
+        "Amazon ELB"
+      ],
+      "correct_answer": "Amazon Route 53",
+      "explanation": "Amazon Route 53 is a scalable DNS web service that translates domain names into IP addresses and provides domain registration services.",
+      "topics": ["Route 53", "DNS", "Networking"]
+    },
+    {
+      "question": "What is the default maximum number of EC2 instances you can run in a region?",
+      "options": [
+        "10",
+        "20",
+        "50",
+        "There is no fixed limit, it depends on instance type"
+      ],
+      "correct_answer": "20",
+      "explanation": "By default, AWS allows up to 20 EC2 instances per region, but this limit can be increased by contacting AWS support.",
+      "topics": ["EC2", "AWS Limits"]
+    },
+    {
+      "question": "Which AWS service provides a content delivery network (CDN)?",
+      "options": [
+        "Amazon S3",
+        "Amazon CloudFront",
+        "Amazon Route 53",
+        "Amazon ELB"
+      ],
+      "correct_answer": "Amazon CloudFront",
+      "explanation": "Amazon CloudFront is a content delivery network (CDN) service that delivers content to users with low latency and high transfer speeds.",
+      "topics": ["CloudFront", "CDN", "Networking"]
+    },
+    {
+      "question": "What is the minimum storage size for an EBS volume?",
+      "options": [
+        "1 GB",
+        "10 GB",
+        "100 GB",
+        "1 TB"
+      ],
+      "correct_answer": "1 GB",
+      "explanation": "The minimum size for an EBS volume is 1 GB, and it can be increased up to 64 TB depending on the volume type.",
+      "topics": ["EBS", "Storage"]
+    },
+    {
+      "question": "Which AWS service is used for relational database management?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon S3",
+        "Amazon ElastiCache"
+      ],
+      "correct_answer": "Amazon RDS",
+      "explanation": "Amazon RDS (Relational Database Service) is a managed service that makes it easy to set up, operate, and scale relational databases in the cloud.",
+      "topics": ["RDS", "Database Services"]
+    },
+    {
+      "question": "What does IAM stand for in AWS?",
+      "options": [
+        "Internet Access Management",
+        "Identity and Access Management",
+        "Internal Application Management",
+        "Infrastructure and Application Management"
+      ],
+      "correct_answer": "Identity and Access Management",
+      "explanation": "IAM stands for Identity and Access Management, which is a service that helps you securely control access to AWS resources.",
+      "topics": ["IAM", "Security"]
+    },
+    {
+      "question": "Which AWS service provides NoSQL database functionality?",
+      "options": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon S3",
+        "Amazon ElastiCache"
+      ],
+      "correct_answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability.",
+      "topics": ["DynamoDB", "NoSQL", "Database Services"]
+    },
+    {
+      "question": "What is the default VPC in AWS?",
+      "options": [
+        "A VPC that is automatically created for each region",
+        "A VPC that must be manually created",
+        "A VPC that only exists in US regions",
+        "A VPC that is shared across all AWS accounts"
+      ],
+      "correct_answer": "A VPC that is automatically created for each region",
+      "explanation": "AWS automatically creates a default VPC in each region for your AWS account, making it easy to get started with EC2 instances.",
+      "topics": ["VPC", "Networking"]
+    },
+    {
+      "question": "Which AWS service is used for monitoring and alerting?",
+      "options": [
+        "Amazon CloudWatch",
+        "Amazon CloudTrail",
+        "Amazon Inspector",
+        "Amazon Config"
+      ],
+      "correct_answer": "Amazon CloudWatch",
+      "explanation": "Amazon CloudWatch is a monitoring and observability service that provides metrics, logs, and alarms for AWS resources and applications.",
+      "topics": ["CloudWatch", "Monitoring"]
+    },
+    {
+      "question": "What is the difference between stopping and terminating an EC2 instance?",
+      "options": [
+        "No difference, both permanently delete the instance",
+        "Stopping preserves the instance for restart, terminating permanently deletes it",
+        "Stopping permanently deletes the instance, terminating preserves it",
+        "Both preserve the instance but stop billing"
+      ],
+      "correct_answer": "Stopping preserves the instance for restart, terminating permanently deletes it",
+      "explanation": "Stopping an EC2 instance shuts it down but preserves the instance and its EBS volumes for restart. Terminating permanently deletes the instance and its instance-store volumes.",
+      "topics": ["EC2", "Instance Management"]
+    },
+    {
+      "question": "Which AWS service provides serverless computing?",
+      "options": [
+        "Amazon EC2",
+        "Amazon Lambda",
+        "Amazon ECS",
+        "Amazon EMR"
+      ],
+      "correct_answer": "Amazon Lambda",
+      "explanation": "Amazon Lambda is a serverless compute service that runs code in response to events without requiring server management.",
+      "topics": ["Lambda", "Serverless"]
+    },
+    {
+      "question": "What is the maximum size of an object that can be stored in S3?",
+      "options": [
+        "5 GB",
+        "5 TB",
+        "10 TB",
+        "Unlimited"
+      ],
+      "correct_answer": "5 TB",
+      "explanation": "The maximum size of an object that can be stored in Amazon S3 is 5 TB per object.",
+      "topics": ["S3", "Storage Limits"]
+    },
+    {
+      "question": "Which AWS service is used for message queuing?",
+      "options": [
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon SES",
+        "Amazon Kinesis"
+      ],
+      "correct_answer": "Amazon SQS",
+      "explanation": "Amazon SQS (Simple Queue Service) is a fully managed message queuing service that enables decoupling of distributed systems.",
+      "topics": ["SQS", "Messaging"]
+    },
+    {
+      "question": "What is the purpose of an AMI in AWS?",
+      "options": [
+        "To monitor applications",
+        "To provide a template for launching EC2 instances",
+        "To manage user access",
+        "To store database backups"
+      ],
+      "correct_answer": "To provide a template for launching EC2 instances",
+      "explanation": "An AMI (Amazon Machine Image) is a template that contains the information needed to launch an EC2 instance, including the operating system, application server, and applications.",
+      "topics": ["AMI", "EC2"]
+    },
+    {
+      "question": "Which AWS service provides push notification functionality?",
+      "options": [
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon SES",
+        "Amazon Kinesis"
+      ],
+      "correct_answer": "Amazon SNS",
+      "explanation": "Amazon SNS (Simple Notification Service) is a messaging service that coordinates and manages the delivery of messages to subscribing endpoints and clients.",
+      "topics": ["SNS", "Messaging", "Notifications"]
+    },
+    {
+      "question": "What is the default security group rule for inbound traffic?",
+      "options": [
+        "Allow all traffic",
+        "Allow HTTP and HTTPS traffic",
+        "Allow SSH traffic",
+        "Deny all traffic"
+      ],
+      "correct_answer": "Deny all traffic",
+      "explanation": "By default, security groups deny all inbound traffic and allow all outbound traffic. Rules must be explicitly added to allow inbound traffic.",
+      "topics": ["Security Groups", "Networking", "Security"]
+    },
+    {
+      "question": "Which AWS service is used for email delivery?",
+      "options": [
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon SES",
+        "Amazon WorkMail"
+      ],
+      "correct_answer": "Amazon SES",
+      "explanation": "Amazon SES (Simple Email Service) is a cloud-based email service that is designed to help digital marketers and application developers send marketing, notification, and transactional emails.",
+      "topics": ["SES", "Email Services"]
+    },
+    {
+      "question": "What is the purpose of an Internet Gateway in AWS?",
+      "options": [
+        "To connect VPCs together",
+        "To provide internet access to VPC resources",
+        "To monitor network traffic",
+        "To encrypt network traffic"
+      ],
+      "correct_answer": "To provide internet access to VPC resources",
+      "explanation": "An Internet Gateway is a VPC component that allows communication between instances in your VPC and the internet.",
+      "topics": ["Internet Gateway", "VPC", "Networking"]
+    },
+    {
+      "question": "Which AWS service provides in-memory caching?",
+      "options": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon ElastiCache",
+        "Amazon S3"
+      ],
+      "correct_answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is a web service that makes it easy to deploy, operate, and scale in-memory cache in the cloud, supporting Redis and Memcached.",
+      "topics": ["ElastiCache", "Caching", "Database Services"]
+    },
+    {
+      "question": "What is the difference between horizontal and vertical scaling?",
+      "options": [
+        "Horizontal scaling adds more instances, vertical scaling increases instance size",
+        "Horizontal scaling increases instance size, vertical scaling adds more instances",
+        "Both are the same",
+        "Neither applies to AWS"
+      ],
+      "correct_answer": "Horizontal scaling adds more instances, vertical scaling increases instance size",
+      "explanation": "Horizontal scaling (scale out) involves adding more instances to handle increased load, while vertical scaling (scale up) involves increasing the size or capacity of existing instances.",
+      "topics": ["Scaling", "Architecture"]
+    },
+    {
+      "question": "Which AWS service provides load balancing?",
+      "options": [
+        "Amazon Route 53",
+        "Amazon CloudFront",
+        "Amazon ELB",
+        "Amazon VPC"
+      ],
+      "correct_answer": "Amazon ELB",
+      "explanation": "Amazon ELB (Elastic Load Balancer) automatically distributes incoming application traffic across multiple targets, such as EC2 instances.",
+      "topics": ["ELB", "Load Balancing", "Networking"]
+    },
+    {
+      "question": "What is the purpose of a NAT Gateway?",
+      "options": [
+        "To provide internet access to private subnet instances",
+        "To connect two VPCs",
+        "To monitor network traffic",
+        "To encrypt network traffic"
+      ],
+      "correct_answer": "To provide internet access to private subnet instances",
+      "explanation": "A NAT Gateway enables instances in a private subnet to connect to the internet or other AWS services while preventing the internet from initiating connections to those instances.",
+      "topics": ["NAT Gateway", "VPC", "Networking"]
+    },
+    {
+      "question": "Which AWS service is used for source code management?",
+      "options": [
+        "Amazon CodeCommit",
+        "Amazon CodeDeploy",
+        "Amazon CodePipeline",
+        "Amazon CodeBuild"
+      ],
+      "correct_answer": "Amazon CodeCommit",
+      "explanation": "Amazon CodeCommit is a fully managed source control service that hosts secure Git repositories.",
+      "topics": ["CodeCommit", "DevOps", "Source Control"]
+    },
+    {
+      "question": "What is the default storage class for S3 objects?",
+      "options": [
+        "Standard",
+        "Standard-IA",
+        "Glacier",
+        "Reduced Redundancy"
+      ],
+      "correct_answer": "Standard",
+      "explanation": "S3 Standard is the default storage class for S3 objects, designed for frequently accessed data with high durability and availability.",
+      "topics": ["S3", "Storage Classes"]
+    },
+    {
+      "question": "Which AWS service provides API management?",
+      "options": [
+        "Amazon Lambda",
+        "Amazon API Gateway",
+        "Amazon CloudFront",
+        "Amazon Route 53"
+      ],
+      "correct_answer": "Amazon API Gateway",
+      "explanation": "Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.",
+      "topics": ["API Gateway", "APIs", "Serverless"]
+    },
+    {
+      "question": "What is the purpose of AWS CloudTrail?",
+      "options": [
+        "To monitor system performance",
+        "To audit API calls and account activity",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To audit API calls and account activity",
+      "explanation": "AWS CloudTrail is a service that enables governance, compliance, and auditing of your AWS account by logging API calls and account activity.",
+      "topics": ["CloudTrail", "Auditing", "Security"]
+    },
+    {
+      "question": "Which AWS service is used for container orchestration?",
+      "options": [
+        "Amazon ECS",
+        "Amazon Lambda",
+        "Amazon EC2",
+        "Amazon EMR"
+      ],
+      "correct_answer": "Amazon ECS",
+      "explanation": "Amazon ECS (Elastic Container Service) is a fully managed container orchestration service that makes it easy to deploy, manage, and scale containerized applications.",
+      "topics": ["ECS", "Containers", "Orchestration"]
+    },
+    {
+      "question": "What is the maximum execution time for a Lambda function?",
+      "options": [
+        "5 minutes",
+        "10 minutes",
+        "15 minutes",
+        "30 minutes"
+      ],
+      "correct_answer": "15 minutes",
+      "explanation": "AWS Lambda functions have a maximum execution time of 15 minutes, after which they are terminated.",
+      "topics": ["Lambda", "Serverless", "Limits"]
+    },
+    {
+      "question": "Which AWS service provides data warehousing?",
+      "options": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Redshift",
+        "Amazon S3"
+      ],
+      "correct_answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is a fast, fully managed data warehouse service that makes it simple and cost-effective to analyze large amounts of data.",
+      "topics": ["Redshift", "Data Warehousing", "Analytics"]
+    },
+    {
+      "question": "What is the purpose of AWS Config?",
+      "options": [
+        "To monitor application performance",
+        "To track resource configuration changes",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To track resource configuration changes",
+      "explanation": "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources.",
+      "topics": ["Config", "Compliance", "Configuration Management"]
+    },
+    {
+      "question": "Which AWS service provides big data processing?",
+      "options": [
+        "Amazon EMR",
+        "Amazon RDS",
+        "Amazon S3",
+        "Amazon Lambda"
+      ],
+      "correct_answer": "Amazon EMR",
+      "explanation": "Amazon EMR (Elastic MapReduce) is a managed service that makes it easy to process large amounts of data using popular frameworks like Hadoop and Spark.",
+      "topics": ["EMR", "Big Data", "Analytics"]
+    },
+    {
+      "question": "What is the purpose of AWS Systems Manager?",
+      "options": [
+        "To manage EC2 instances and on-premises servers",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To manage EC2 instances and on-premises servers",
+      "explanation": "AWS Systems Manager is a collection of capabilities that enable you to manage your applications and infrastructure running in the AWS Cloud and on-premises.",
+      "topics": ["Systems Manager", "Instance Management"]
+    },
+    {
+      "question": "Which AWS service provides machine learning capabilities?",
+      "options": [
+        "Amazon SageMaker",
+        "Amazon Lambda",
+        "Amazon EC2",
+        "Amazon S3"
+      ],
+      "correct_answer": "Amazon SageMaker",
+      "explanation": "Amazon SageMaker is a fully managed service that provides every developer and data scientist with the ability to build, train, and deploy machine learning models quickly.",
+      "topics": ["SageMaker", "Machine Learning", "AI"]
+    },
+    {
+      "question": "What is the purpose of AWS Trusted Advisor?",
+      "options": [
+        "To provide cost optimization recommendations",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To provide cost optimization recommendations",
+      "explanation": "AWS Trusted Advisor is an online tool that provides real-time guidance to help you provision resources following AWS best practices for cost optimization, security, fault tolerance, and performance.",
+      "topics": ["Trusted Advisor", "Cost Optimization", "Best Practices"]
+    },
+    {
+      "question": "Which AWS service is used for workflow orchestration?",
+      "options": [
+        "Amazon Step Functions",
+        "Amazon Lambda",
+        "Amazon SQS",
+        "Amazon SNS"
+      ],
+      "correct_answer": "Amazon Step Functions",
+      "explanation": "Amazon Step Functions is a serverless workflow service that lets you coordinate multiple AWS services into serverless workflows.",
+      "topics": ["Step Functions", "Workflow", "Orchestration"]
+    },
+    {
+      "question": "What is the purpose of AWS CloudFormation?",
+      "options": [
+        "To provision and manage AWS resources using templates",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To provision and manage AWS resources using templates",
+      "explanation": "AWS CloudFormation is a service that helps you model and set up your AWS resources using templates, enabling infrastructure as code.",
+      "topics": ["CloudFormation", "Infrastructure as Code", "Templates"]
+    },
+    {
+      "question": "Which AWS service provides DNS failover?",
+      "options": [
+        "Amazon Route 53",
+        "Amazon CloudFront",
+        "Amazon ELB",
+        "Amazon VPC"
+      ],
+      "correct_answer": "Amazon Route 53",
+      "explanation": "Amazon Route 53 provides DNS failover by routing traffic to healthy endpoints and away from unhealthy ones.",
+      "topics": ["Route 53", "DNS", "Failover"]
+    },
+    {
+      "question": "What is the purpose of AWS Organizations?",
+      "options": [
+        "To manage multiple AWS accounts centrally",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To manage multiple AWS accounts centrally",
+      "explanation": "AWS Organizations is a service that enables you to centrally manage and govern multiple AWS accounts.",
+      "topics": ["Organizations", "Account Management", "Governance"]
+    },
+    {
+      "question": "Which AWS service provides real-time data streaming?",
+      "options": [
+        "Amazon Kinesis",
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon S3"
+      ],
+      "correct_answer": "Amazon Kinesis",
+      "explanation": "Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming data.",
+      "topics": ["Kinesis", "Streaming", "Real-time Data"]
+    },
+    {
+      "question": "What is the purpose of AWS Elastic Beanstalk?",
+      "options": [
+        "To deploy and manage web applications",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To deploy and manage web applications",
+      "explanation": "AWS Elastic Beanstalk is a service that makes it easy to deploy and manage web applications and services on AWS without worrying about the infrastructure.",
+      "topics": ["Elastic Beanstalk", "Application Deployment", "Platform as a Service"]
+    },
+    {
+      "question": "Which AWS service provides search capabilities?",
+      "options": [
+        "Amazon CloudSearch",
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon S3"
+      ],
+      "correct_answer": "Amazon CloudSearch",
+      "explanation": "Amazon CloudSearch is a managed service that makes it simple and cost-effective to set up, manage, and scale a search solution for websites or applications.",
+      "topics": ["CloudSearch", "Search", "Managed Services"]
+    },
+    {
+      "question": "What is the purpose of AWS Direct Connect?",
+      "options": [
+        "To establish a dedicated network connection between on-premises and AWS",
+        "To connect VPCs together",
+        "To provide internet access",
+        "To monitor network traffic"
+      ],
+      "correct_answer": "To establish a dedicated network connection between on-premises and AWS",
+      "explanation": "AWS Direct Connect is a service that establishes a dedicated network connection between your on-premises data center and AWS, providing more consistent network performance.",
+      "topics": ["Direct Connect", "Networking", "Hybrid Cloud"]
+    },
+    {
+      "question": "Which AWS service provides certificate management?",
+      "options": [
+        "AWS Certificate Manager",
+        "Amazon Inspector",
+        "AWS IAM",
+        "AWS Config"
+      ],
+      "correct_answer": "AWS Certificate Manager",
+      "explanation": "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private SSL/TLS certificates for use with AWS services.",
+      "topics": ["Certificate Manager", "SSL/TLS", "Security"]
+    },
+    {
+      "question": "What is the purpose of AWS Key Management Service (KMS)?",
+      "options": [
+        "To create and manage encryption keys",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To create and manage encryption keys",
+      "explanation": "AWS KMS is a managed service that makes it easy to create and control the encryption keys used to encrypt your data.",
+      "topics": ["KMS", "Encryption", "Security"]
+    },
+    {
+      "question": "Which AWS service provides identity federation?",
+      "options": [
+        "AWS IAM",
+        "Amazon Cognito",
+        "AWS Directory Service",
+        "AWS Single Sign-On"
+      ],
+      "correct_answer": "Amazon Cognito",
+      "explanation": "Amazon Cognito provides identity federation services, allowing users to sign in through social identity providers like Facebook, Google, and Amazon, as well as enterprise identity providers.",
+      "topics": ["Cognito", "Identity Federation", "Authentication"]
+    },
+    {
+      "question": "What is the purpose of AWS Auto Scaling?",
+      "options": [
+        "To automatically adjust capacity based on demand",
+        "To monitor application performance",
+        "To manage user access",
+        "To backup data"
+      ],
+      "correct_answer": "To automatically adjust capacity based on demand",
+      "explanation": "AWS Auto Scaling monitors applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.",
+      "topics": ["Auto Scaling", "Scaling", "Cost Optimization"]
+    },
+    {
+      "question": "Which AWS service provides application performance monitoring?",
+      "options": [
+        "Amazon CloudWatch",
+        "AWS X-Ray",
+        "AWS Config",
+        "Amazon Inspector"
+      ],
+      "correct_answer": "AWS X-Ray",
+      "explanation": "AWS X-Ray is a service that collects data about requests that your application serves, providing tools to view, filter, and gain insights into that data to identify issues and opportunities for optimization.",
+      "topics": ["X-Ray", "Performance Monitoring", "Debugging"]
+    }
+  ]
+}
