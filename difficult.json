@@ -201,4 +201,296 @@
         "CloudFront with custom cache invalidation"
       ],
       "correct_answer": "ElastiCache Global Datastore with pub/sub invalidation",
-      "explanation": "ElastiCache Global Datastore provides cross-region replication with sub-second lat
+      "explanation": "ElastiCache Global Datastore provides cross-region replication with sub-second latency. Combined with SNS/SQS for cache invalidation events, it ensures consistency across regions.",
+      "topics": ["Distributed Caching", "ElastiCache", "Global Datastore", "Cache Invalidation"]
+    },
+    {
+      "question": "Your application needs to process financial transactions with ACID compliance across multiple database tables. Which AWS service combination ensures this?",
+      "options": [
+        "DynamoDB with transactions",
+        "RDS with stored procedures",
+        "Aurora with multi-master clusters",
+        "DynamoDB with DynamoDB Transactions API"
+      ],
+      "correct_answer": "DynamoDB with DynamoDB Transactions API",
+      "explanation": "DynamoDB Transactions API provides ACID compliance across multiple tables and operations, ensuring data consistency for financial transactions with the performance benefits of NoSQL.",
+      "topics": ["ACID Compliance", "DynamoDB", "Transactions", "Financial Systems"]
+    },
+    {
+      "question": "You're building a real-time multiplayer game backend that needs to handle 100,000 concurrent connections with minimal latency. Which architecture is most suitable?",
+      "options": [
+        "API Gateway WebSocket → Lambda → DynamoDB",
+        "ALB → ECS with WebSocket support → ElastiCache → DynamoDB",
+        "GameLift → Lambda → DynamoDB",
+        "Direct connection to EC2 with socket.io → Redis → DynamoDB"
+      ],
+      "correct_answer": "Direct connection to EC2 with socket.io → Redis → DynamoDB",
+      "explanation": "For real-time gaming with 100,000 concurrent connections, direct WebSocket connections to EC2 instances provide the lowest latency. Redis handles real-time state, and DynamoDB stores persistent game data.",
+      "topics": ["Real-time Gaming", "WebSockets", "High Concurrency", "Low Latency"]
+    },
+    {
+      "question": "Your data pipeline needs to handle schema evolution without breaking downstream consumers. Which architecture pattern is most resilient?",
+      "options": [
+        "Schema Registry with Kafka (MSK) and Avro serialization",
+        "DynamoDB with flexible schema",
+        "S3 with Parquet and schema inference",
+        "RDS with database migrations"
+      ],
+      "correct_answer": "Schema Registry with Kafka (MSK) and Avro serialization",
+      "explanation": "Schema Registry with Avro provides schema evolution capabilities, allowing backward and forward compatibility. MSK (Managed Streaming for Kafka) ensures reliable message delivery.",
+      "topics": ["Schema Evolution", "MSK", "Avro", "Data Pipeline"]
+    },
+    {
+      "question": "You need to implement a time-series database for IoT sensor data from 1 million devices. The system needs to handle 10,000 writes per second and support complex time-based queries. Which solution is most efficient?",
+      "options": [
+        "DynamoDB with time-based partition keys",
+        "Timestream with automatic data lifecycle management",
+        "InfluxDB on EC2 with Auto Scaling",
+        "RDS with time-series optimized tables"
+      ],
+      "correct_answer": "Timestream with automatic data lifecycle management",
+      "explanation": "Amazon Timestream is purpose-built for time-series data, providing automatic data lifecycle management, efficient compression, and optimized queries for time-based analytics.",
+      "topics": ["Time-series Database", "IoT", "Timestream", "High Throughput"]
+    },
+    {
+      "question": "Your application needs to implement event sourcing with strong consistency guarantees. Which AWS service combination provides the best solution?",
+      "options": [
+        "Kinesis Data Streams → Lambda → DynamoDB",
+        "EventBridge → Lambda → RDS",
+        "DynamoDB Streams → Lambda → S3",
+        "Kinesis Data Streams → Kinesis Analytics → Aurora"
+      ],
+      "correct_answer": "Kinesis Data Streams → Lambda → DynamoDB",
+      "explanation": "Kinesis Data Streams provides ordered, reliable event storage with strong consistency within a shard. Lambda processes events in order, and DynamoDB provides consistent state storage.",
+      "topics": ["Event Sourcing", "Kinesis", "Strong Consistency", "Lambda"]
+    },
+    {
+      "question": "You're implementing a content management system that needs to handle large media files (up to 10GB) with CDN distribution and on-the-fly image processing. Which architecture is most cost-effective?",
+      "options": [
+        "S3 → CloudFront → Lambda@Edge for processing",
+        "S3 → CloudFront → EC2 Auto Scaling for processing",
+        "S3 → CloudFront → Lambda with S3 triggers for processing",
+        "S3 → CloudFront → ECS with Fargate for processing"
+      ],
+      "correct_answer": "S3 → CloudFront → Lambda with S3 triggers for processing",
+      "explanation": "This architecture uses S3 for storage, CloudFront for CDN, and Lambda triggered by S3 events for on-demand processing. It's cost-effective because processing only occurs when needed.",
+      "topics": ["Content Management", "CDN", "Lambda", "Image Processing"]
+    },
+    {
+      "question": "Your machine learning workflow needs to process large datasets, train models, and deploy them with A/B testing capabilities. Which end-to-end solution is most suitable?",
+      "options": [
+        "EMR → SageMaker → Lambda → API Gateway",
+        "Glue → SageMaker → SageMaker Endpoints → API Gateway",
+        "EMR → SageMaker → SageMaker Multi-Model Endpoints → API Gateway",
+        "Glue → SageMaker Pipelines → SageMaker Endpoints → API Gateway"
+      ],
+      "correct_answer": "Glue → SageMaker Pipelines → SageMaker Endpoints → API Gateway",
+      "explanation": "SageMaker Pipelines provides end-to-end ML workflow orchestration, SageMaker Endpoints support A/B testing with traffic splitting, and Glue handles data preparation efficiently.",
+      "topics": ["Machine Learning", "SageMaker", "A/B Testing", "ML Pipelines"]
+    },
+    {
+      "question": "You need to implement a data lake with strict data governance, lineage tracking, and fine-grained access control. Which combination provides comprehensive governance?",
+      "options": [
+        "S3 → Glue → Athena → QuickSight",
+        "S3 → Lake Formation → Glue → Athena",
+        "S3 → DataBrew → Glue → Athena",
+        "S3 → Glue → DataBrew → Athena"
+      ],
+      "correct_answer": "S3 → Lake Formation → Glue → Athena",
+      "explanation": "Lake Formation provides comprehensive data governance including fine-grained access control, data lineage tracking, and centralized permissions management for data lake architectures.",
+      "topics": ["Data Lake", "Data Governance", "Lake Formation", "Access Control"]
+    },
+    {
+      "question": "Your containerized application needs to auto-scale based on custom metrics (queue depth) and handle both CPU and memory-intensive workloads. Which orchestration solution is most flexible?",
+      "options": [
+        "ECS with Target Tracking scaling",
+        "EKS with Horizontal Pod Autoscaler and custom metrics",
+        "ECS with Step Scaling and CloudWatch alarms",
+        "Fargate with Application Auto Scaling"
+      ],
+      "correct_answer": "EKS with Horizontal Pod Autoscaler and custom metrics",
+      "explanation": "EKS with HPA provides the most flexible auto-scaling capabilities, supporting custom metrics through the metrics server. It can handle both CPU and memory-based scaling with fine-grained control.",
+      "topics": ["Kubernetes", "Auto Scaling", "Custom Metrics", "EKS"]
+    },
+    {
+      "question": "You need to implement a distributed task queue system that can handle millions of tasks with different priorities and retry mechanisms. Which architecture is most robust?",
+      "options": [
+        "SQS with multiple queues and Lambda consumers",
+        "SQS FIFO with priority queues and ECS consumers",
+        "Kinesis with Lambda consumers and DynamoDB for state",
+        "Step Functions with distributed map and error handling"
+      ],
+      "correct_answer": "SQS with multiple queues and Lambda consumers",
+      "explanation": "Multiple SQS queues can handle different priorities, built-in retry mechanisms, and dead letter queues. Lambda consumers provide automatic scaling and cost efficiency for variable workloads.",
+      "topics": ["Task Queue", "SQS", "Lambda", "Distributed Systems"]
+    },
+    {
+      "question": "Your application requires end-to-end encryption for data in transit and at rest, with key management auditing. Which comprehensive security architecture should you implement?",
+      "options": [
+        "KMS → CloudHSM → Certificate Manager → CloudTrail",
+        "KMS → Certificate Manager → CloudTrail → GuardDuty",
+        "CloudHSM → Certificate Manager → CloudTrail → Config",
+        "KMS → Certificate Manager → CloudTrail → Macie"
+      ],
+      "correct_answer": "KMS → Certificate Manager → CloudTrail → GuardDuty",
+      "explanation": "KMS for encryption key management, Certificate Manager for TLS certificates, CloudTrail for key usage auditing, and GuardDuty for threat detection provide comprehensive security coverage.",
+      "topics": ["End-to-end Encryption", "KMS", "Certificate Manager", "Security"]
+    },
+    {
+      "question": "You're building a global e-commerce platform that needs to handle Black Friday traffic (100x normal load) with minimal latency worldwide. Which architecture pattern is most suitable?",
+      "options": [
+        "Multi-region active-active with Global Accelerator",
+        "Single region with CloudFront and Auto Scaling",
+        "Multi-region active-passive with Route 53 failover",
+        "Edge computing with Lambda@Edge and CloudFront"
+      ],
+      "correct_answer": "Multi-region active-active with Global Accelerator",
+      "explanation": "Multi-region active-active distributes load globally, Global Accelerator provides optimal routing and improved performance. This architecture can handle extreme traffic spikes with minimal latency.",
+      "topics": ["Global Scale", "Multi-Region", "Global Accelerator", "High Traffic"]
+    },
+    {
+      "question": "Your microservices architecture needs to implement distributed tracing, centralized logging, and metrics collection. Which observability stack is most comprehensive?",
+      "options": [
+        "X-Ray → CloudWatch Logs → CloudWatch Metrics",
+        "X-Ray → ELK Stack on EC2 → CloudWatch Metrics",
+        "X-Ray → CloudWatch Logs → OpenTelemetry → Prometheus",
+        "X-Ray → OpenSearch → CloudWatch Container Insights"
+      ],
+      "correct_answer": "X-Ray → CloudWatch Logs → CloudWatch Metrics",
+      "explanation": "This native AWS stack provides comprehensive observability: X-Ray for distributed tracing, CloudWatch Logs for centralized logging, and CloudWatch Metrics for monitoring - all integrated seamlessly.",
+      "topics": ["Observability", "Distributed Tracing", "X-Ray", "CloudWatch"]
+    },
+    {
+      "question": "You need to implement a real-time recommendation system that updates models based on user interactions within 100ms. Which architecture achieves this latency requirement?",
+      "options": [
+        "Kinesis → Lambda → SageMaker → ElastiCache",
+        "DynamoDB Streams → Lambda → SageMaker → DynamoDB",
+        "Kinesis → Kinesis Analytics → Lambda → ElastiCache",
+        "Direct API → Lambda → Pre-computed models in ElastiCache"
+      ],
+      "correct_answer": "Direct API → Lambda → Pre-computed models in ElastiCache",
+      "explanation": "To achieve 100ms latency, recommendations must be pre-computed and cached in ElastiCache. Real-time user interactions trigger Lambda functions that serve cached recommendations and update models asynchronously.",
+      "topics": ["Real-time Recommendations", "Low Latency", "ElastiCache", "Lambda"]
+    },
+    {
+      "question": "Your financial application needs to implement blockchain-based audit trails with immutable transaction records. Which AWS service combination provides this capability?",
+      "options": [
+        "QLDB → Lambda → S3",
+        "Managed Blockchain → Lambda → S3",
+        "DynamoDB → Lambda → S3 with object lock",
+        "QLDB → Step Functions → S3 with Glacier"
+      ],
+      "correct_answer": "QLDB → Lambda → S3",
+      "explanation": "QLDB (Quantum Ledger Database) provides immutable, cryptographically verifiable transaction logs perfect for audit trails. Lambda processes transactions, and S3 provides additional backup storage.",
+      "topics": ["Blockchain", "Audit Trails", "QLDB", "Immutable Records"]
+    },
+    {
+      "question": "You're implementing a serverless data processing pipeline that needs to handle both batch and streaming data with exactly-once processing guarantees. Which architecture ensures this?",
+      "options": [
+        "S3 → Lambda → DynamoDB with conditional writes",
+        "Kinesis → Lambda → DynamoDB with idempotency keys",
+        "SQS FIFO → Lambda → RDS with transactions",
+        "EventBridge → Lambda → DynamoDB with transactions"
+      ],
+      "correct_answer": "Kinesis → Lambda → DynamoDB with idempotency keys",
+      "explanation": "Kinesis provides exactly-once delivery within a shard, Lambda can process both batch and streaming data, and DynamoDB with idempotency keys ensures exactly-once processing even with retries.",
+      "topics": ["Exactly-once Processing", "Kinesis", "Lambda", "Idempotency"]
+    },
+    {
+      "question": "Your application needs to implement a sophisticated workflow with parallel processing, conditional branching, and error handling across multiple AWS services. Which orchestration service is most appropriate?",
+      "options": [
+        "Step Functions with Express Workflows",
+        "Step Functions with Standard Workflows",
+        "Simple Workflow Service (SWF)",
+        "Lambda with SQS orchestration"
+      ],
+      "correct_answer": "Step Functions with Standard Workflows",
+      "explanation": "Step Functions Standard Workflows provide the most sophisticated orchestration capabilities including parallel processing, conditional branching, error handling, and long-running workflows with full audit trails.",
+      "topics": ["Workflow Orchestration", "Step Functions", "Complex Workflows", "Error Handling"]
+    },
+    {
+      "question": "You need to implement a multi-tenant analytics platform where each tenant's data must be completely isolated, with tenant-specific dashboards and reporting. Which architecture ensures proper isolation?",
+      "options": [
+        "Shared QuickSight with row-level security",
+        "Separate S3 buckets per tenant with tenant-specific QuickSight accounts",
+        "Shared Athena with partitioned data and IAM policies",
+        "Separate data lakes per tenant with cross-account access"
+      ],
+      "correct_answer": "Separate S3 buckets per tenant with tenant-specific QuickSight accounts",
+      "explanation": "Complete data isolation requires separate S3 buckets per tenant with proper IAM policies, and tenant-specific QuickSight accounts ensure dashboard and reporting isolation.",
+      "topics": ["Multi-tenancy", "Data Isolation", "QuickSight", "Analytics"]
+    },
+    {
+      "question": "Your IoT application collects data from sensors every second and needs to detect anomalies in real-time while storing historical data for machine learning. Which architecture is most efficient?",
+      "options": [
+        "IoT Core → Kinesis → Lambda → DynamoDB + S3",
+        "IoT Core → Kinesis → Kinesis Analytics → Lambda → TimeStream",
+        "IoT Core → Lambda → DynamoDB → S3 lifecycle",
+        "IoT Core → Kinesis → EMR Streaming → S3 + DynamoDB"
+      ],
+      "correct_answer": "IoT Core → Kinesis → Kinesis Analytics → Lambda → TimeStream",
+      "explanation": "IoT Core ingests sensor data, Kinesis provides streaming, Kinesis Analytics detects anomalies in real-time, Lambda triggers alerts, and TimeStream stores time-series data efficiently for ML.",
+      "topics": ["IoT", "Anomaly Detection", "Real-time Analytics", "TimeStream"]
+    },
+    {
+      "question": "You're building a content delivery platform that needs to serve different content based on user location, device type, and subscription tier. Which architecture provides the most flexibility?",
+      "options": [
+        "CloudFront with Lambda@Edge for logic",
+        "CloudFront with origin request policies",
+        "API Gateway with geographic routing",
+        "Route 53 with geolocation routing to different origins"
+      ],
+      "correct_answer": "CloudFront with Lambda@Edge for logic",
+      "explanation": "Lambda@Edge allows running custom logic at edge locations, enabling content personalization based on user location, device type, and subscription tier with minimal latency.",
+      "topics": ["Content Delivery", "Lambda@Edge", "Personalization", "Edge Computing"]
+    },
+    {
+      "question": "Your application requires implementing a sophisticated caching strategy with cache warming, intelligent invalidation, and multi-layer caching. Which architecture is most effective?",
+      "options": [
+        "CloudFront → ALB → Application cache → ElastiCache → Database",
+        "CloudFront → API Gateway → Lambda → ElastiCache → Database",
+        "CloudFront → ALB → ElastiCache → DynamoDB DAX → Database",
+        "CloudFront → ALB → ElastiCache with write-through → Database"
+      ],
+      "correct_answer": "CloudFront → ALB → ElastiCache → DynamoDB DAX → Database",
+      "explanation": "This multi-layer caching strategy provides CloudFront for global edge caching, ElastiCache for application-level caching, DynamoDB DAX for database caching, creating an efficient caching hierarchy.",
+      "topics": ["Multi-layer Caching", "CloudFront", "ElastiCache", "DynamoDB DAX"]
+    },
+    {
+      "question": "You need to implement a distributed configuration management system that can handle thousands of microservices with real-time configuration updates. Which solution is most scalable?",
+      "options": [
+        "Parameter Store with Lambda polling",
+        "AppConfig with client-side caching",
+        "DynamoDB with DynamoDB Streams",
+        "S3 with SNS notifications"
+      ],
+      "correct_answer": "AppConfig with client-side caching",
+      "explanation": "AppConfig is specifically designed for configuration management at scale, with built-in validation, rollback capabilities, and client-side caching for optimal performance with thousands of microservices.",
+      "topics": ["Configuration Management", "AppConfig", "Microservices", "Scalability"]
+    },
+    {
+      "question": "Your application needs to implement a sophisticated rate limiting system with user-based quotas, burst capacity, and distributed enforcement. Which architecture provides the most control?",
+      "options": [
+        "API Gateway with usage plans and throttling",
+        "ALB with AWS WAF rate limiting",
+        "Redis-based rate limiting with Lambda",
+        "DynamoDB with conditional writes for rate limiting"
+      ],
+      "correct_answer": "Redis-based rate limiting with Lambda",
+      "explanation": "Redis-based rate limiting provides the most flexibility for sophisticated rate limiting algorithms, user-based quotas, and burst capacity with distributed enforcement across multiple instances.",
+      "topics": ["Rate Limiting", "Redis", "Distributed Systems", "API Protection"]
+    },
+    {
+      "question": "You're implementing a real-time collaborative editing platform (like Google Docs) that needs to handle concurrent edits with conflict resolution. Which architecture ensures consistency?",
+      "options": [
+        "WebSocket API → Lambda → DynamoDB with conditional writes",
+        "WebSocket API → ECS → DynamoDB with optimistic locking",
+        "WebSocket API → Lambda → ElastiCache with Lua scripts",
+        "Direct WebSocket to EC2 → Redis with CRDT algorithms"
+      ],
+      "correct_answer": "Direct WebSocket to EC2 → Redis with CRDT algorithms",
+      "explanation": "Real-time collaborative editing requires CRDT (Conflict-free Replicated Data Types) algorithms for proper conflict resolution. Direct WebSocket connections to EC2 with Redis provide the lowest latency and most control.",
+      "topics": ["Real-time Collaboration", "WebSockets", "CRDT", "Conflict Resolution"]
+    }
+  ]
+}
